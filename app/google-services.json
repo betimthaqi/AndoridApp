@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "866281499221",
+    "project_id": "lejlekushop-30735",
+    "storage_bucket": "lejlekushop-30735.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866281499221:android:6e7a6c19280106f620c2dc",
+        "android_client_info": {
+          "package_name": "com.example.lejlekustore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866281499221-66gm33j1nf0dtgtdlo0hm5i784sa3g87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYwiGf5kviJ2JynAo3FrOzKEw4Qk5agCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866281499221-66gm33j1nf0dtgtdlo0hm5i784sa3g87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
