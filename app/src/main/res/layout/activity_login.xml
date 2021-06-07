@@ -60,43 +60,12 @@
         android:textStyle="bold"
         />
 
-    <LinearLayout
-        android:id="@+id/linear_layout_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/login_password_input"
-        android:layout_marginTop="5dp" >
-
-        <CheckBox
-            android:id="@+id/rememberme_chkb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:gravity="center_vertical"
-            android:textStyle="bold"
-            android:layout_marginLeft="17dp"
-            android:button="@drawable/checkbox_size"
-            android:text="Remember Me" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forget Password?"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="85dp"
-            />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linear_layout_1"
+        android:layout_below="@+id/login_password_input"
         android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
@@ -107,34 +76,15 @@
         android:textColor="@color/white"
         android:textSize="18sp" />
 
-    <LinearLayout
-        android:id="@+id/linear_layout_2"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/login_btn"
-        android:layout_marginTop="5dp" >
+        android:text="Forget Password?"
+        android:layout_below="@id/login_btn"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="I am not Admin?"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:visibility="invisible"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="I am Admin?"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="125dp"
-
-            />
-    </LinearLayout>
 </RelativeLayout>

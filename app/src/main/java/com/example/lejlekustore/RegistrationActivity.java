@@ -3,6 +3,7 @@ package com.example.lejlekustore;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -37,8 +38,18 @@ public class RegistrationActivity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         Button registerButton = findViewById(R.id.register_btn);
+        Button backloginButton = findViewById(R.id.backlogin_btn);
         final EditText usernameInput = findViewById(R.id.register_username_input);
         final EditText passwordInput = findViewById(R.id.register_password_input);
+
+        backloginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(RegistrationActivity.this, "You have gone back to login page", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +68,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     private void singUp(String email, String password){

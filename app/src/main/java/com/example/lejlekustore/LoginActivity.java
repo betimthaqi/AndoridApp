@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -114,8 +115,28 @@ public class LoginActivity extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
         if(user != null){
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            finish();
+
+            DocumentReference df = FirebaseFirestore.getInstance().collection("Users").document(mAuth.getUid());
+            df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    if(documentSnapshot.getString("isAdmin") != null){
+                        startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                        finish();
+                    }
+                    if(documentSnapshot.getString("isUser") != null){
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+                    finish();
+                }
+            });
+
         }
     }
 }
