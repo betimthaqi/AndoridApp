@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminActivity">
+    tools:context=".AdminActivity"
+    android:background="@drawable/admin_wallpaper2"
+    >
 
     <TextView
         android:id="@+id/textView"
@@ -14,12 +16,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginTop="90dp"
+        android:layout_centerVertical="true"
         android:gravity="center_horizontal"
         android:text="Hello Admin"
         android:textAlignment="center"
@@ -27,6 +25,22 @@
         android:textSize="35sp"
         android:textStyle="bold|italic" />
 
+    <Button
+        android:id="@+id/category_product_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/buttons"
+        android:padding="20dp"
+        android:text="Product Category"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/admin_logout_btn"
@@ -37,12 +51,15 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/buttons"
         android:padding="20dp"
         android:text="Logout"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp" />
+
+
+
 
 </RelativeLayout>

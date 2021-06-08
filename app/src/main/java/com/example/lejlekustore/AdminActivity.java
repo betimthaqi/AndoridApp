@@ -25,6 +25,16 @@ public class AdminActivity extends AppCompatActivity {
         String email = user.getEmail();
 
         Button logoutBtn = findViewById(R.id.admin_logout_btn);
+        Button categoryProductBtn = findViewById(R.id.category_product_btn);
+
+        categoryProductBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminActivity.this, AdminCategoryActivity.class));
+                finish();
+            }
+        });
+
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
