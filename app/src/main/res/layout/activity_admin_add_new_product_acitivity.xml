@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminAddNewProductAcitivity"
-    android:background="@drawable/admin_wallpaper">
+    android:background="@drawable/admin_wallpaper3">
 
     <ImageView
         android:id="@+id/select_product_id"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="360dp"
+        android:layout_height="200dp"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="0dp"
-        android:src="@drawable/laptops"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/selectproductimage"
         android:layout_centerHorizontal="true"
         />
 
@@ -25,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/select_product_id"
         android:inputType="textMultiLine"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="80dp"
         android:layout_centerVertical="true"
         android:padding="20dp"
         android:hint="Product Name..."
@@ -69,7 +68,7 @@
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
         android:padding="17dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="6dp"
         android:textSize="18sp"
         android:text="Add Product"
         android:textColor="@color/white"
