@@ -4,6 +4,32 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home"
+            android:iconTint="@color/white"
+            android:actionLayout="@layout/fragment_home"
+            />
+
+
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/category"
+            android:title="Categories"
+            android:iconTint="@color/white"
+            android:actionLayout="@layout/fragment_category"
+            />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="Profile"
+            android:iconTint="@color/white"
+            android:actionLayout="@layout/fragment_profile"
+            />
+
         <item
             android:id="@+id/nav_cart"
             android:icon="@drawable/nav_cart"
@@ -15,13 +41,10 @@
             android:id="@+id/nav_orders"
             android:icon="@drawable/orders"
             android:title="Orders"
-            android:iconTint="@color/white"/>
+            android:iconTint="@color/white"
+            android:actionLayout="@layout/fragment_home"
+            />
 
-        <item
-            android:id="@+id/nav_categories"
-            android:icon="@drawable/category"
-            android:title="Categories"
-            android:iconTint="@color/white"/>
 
         <item
             android:id="@+id/nav_settings"

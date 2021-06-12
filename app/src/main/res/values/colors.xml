@@ -9,4 +9,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="matteblack"> #28282B </color>
+    <color name="greendark"> #158311 </color>
+
 </resources>

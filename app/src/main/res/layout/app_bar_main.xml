@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context="com.example.lejlekustore.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/matteblack"
-            app:popupTheme="@style/Theme.LejlekuStore.PopupOverlay" />
+            app:popupTheme="@style/Theme.LejlekuStore.PopupOverlay"
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -30,6 +31,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         android:backgroundTint="@color/matteblack"
-        app:srcCompat="@drawable/cart_png" />
+        app:srcCompat="@drawable/cart_png"
+
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
