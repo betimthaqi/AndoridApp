@@ -43,7 +43,7 @@
             android:icon="@drawable/newproduct"
             android:title="New Products"
             android:iconTint="@color/white"
-            android:actionLayout="@layout/fragment_home"
+
             />
 
         <item
@@ -51,7 +51,7 @@
             android:icon="@drawable/orders"
             android:title="Orders"
             android:iconTint="@color/white"
-            android:actionLayout="@layout/fragment_home"
+
             />
 
 

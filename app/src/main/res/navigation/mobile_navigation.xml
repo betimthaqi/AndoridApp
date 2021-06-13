@@ -19,7 +19,7 @@
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_category"
+        android:id="@+id/nav_categories"
         android:name="com.example.lejlekustore.ui.category.CategoryFragment"
         android:label="Category"
         tools:layout="@layout/fragment_category" />
@@ -37,7 +37,7 @@
         tools:layout="@layout/fragment_my_carts" />
 
     <fragment
-        android:id="@+id/nav_myorders"
+        android:id="@+id/nav_orders"
         android:name="com.example.lejlekustore.MyOrdersFragment"
         android:label="My Orders"
         tools:layout="@layout/fragment_my_orders" />
