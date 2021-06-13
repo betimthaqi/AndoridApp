@@ -23,4 +23,22 @@
         android:name="com.example.lejlekustore.ui.category.CategoryFragment"
         android:label="Category"
         tools:layout="@layout/fragment_category" />
+
+    <fragment
+        android:id="@+id/nav_newproduct"
+        android:name="com.example.lejlekustore.NewProductFragment"
+        android:label="New Product"
+        tools:layout="@layout/fragment_new_product" />
+
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.example.lejlekustore.MyCartsFragment"
+        android:label="My Cart"
+        tools:layout="@layout/fragment_my_carts" />
+
+    <fragment
+        android:id="@+id/nav_myorders"
+        android:name="com.example.lejlekustore.MyOrdersFragment"
+        android:label="My Orders"
+        tools:layout="@layout/fragment_my_orders" />
 </navigation>

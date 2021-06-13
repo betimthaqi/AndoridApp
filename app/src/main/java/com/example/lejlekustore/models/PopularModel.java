@@ -1,28 +1,28 @@
 package com.example.lejlekustore.models;
 
 public class PopularModel {
-    String name;
+    String pname;
     String description;
     String price;
-    String img_url;
+    String image;
 
     public PopularModel() {
 
     }
 
-    public PopularModel(String name, String description, String price, String img_url) {
-        this.name = name;
+    public PopularModel(String pname, String description, String price, String image) {
+        this.pname = pname;
         this.description = description;
         this.price = price;
-        this.img_url = img_url;
+        this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getPname() {
+        return pname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPname(String pname) {
+        this.pname = pname;
     }
 
     public String getDescription() {
@@ -41,12 +41,12 @@ public class PopularModel {
         this.price = price;
     }
 
-    public String getImg_url() {
-        return img_url;
+    public String getImage() {
+        return image;
     }
 
-    public void setImg_url(String img_url) {
-        this.img_url = img_url;
+    public void setImage(String image) {
+        this.image = image;
     }
 }
 

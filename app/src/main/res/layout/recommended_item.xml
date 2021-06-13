@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="3dp"
     android:layout_margin="5dp"
-    app:cardCornerRadius="15dp"
     >
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,31 +14,26 @@
         android:orientation="vertical"
         android:padding="5dp"
         android:gravity="center"
-
         >
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/pop_img"
-            android:layout_width="280dp"
-            android:layout_height="190dp"
-            app:riv_corner_radius="14dp"
-            android:scaleType="centerCrop"
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/rec_img"
             android:src="@drawable/ecommercewallpaper"
-
-
             />
 
         <TextView
-            android:id="@+id/pop_name"
+            android:id="@+id/rec_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Popular Product"
+            android:text="Product Name"
             android:textStyle="bold"
             android:textSize="19sp"
             />
 
         <TextView
-            android:id="@+id/pop_des"
+            android:id="@+id/rec_des"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -48,7 +43,7 @@
             />
 
         <TextView
-            android:id="@+id/pop_price"
+            android:id="@+id/rec_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Price"
@@ -57,8 +52,8 @@
             android:textColor="@color/greendark"
             />
 
-
     </LinearLayout>
+
 
 
 </androidx.cardview.widget.CardView>

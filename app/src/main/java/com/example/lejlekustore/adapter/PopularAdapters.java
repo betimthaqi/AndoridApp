@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.lejlekustore.R;
+import com.example.lejlekustore.models.HomeCategory;
 import com.example.lejlekustore.models.PopularModel;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
     private Context context;
     private List<PopularModel> popularModelList;
 
-    public PopularAdapters(Context context, List<PopularAdapters> popularAdaptersList) {
+    public PopularAdapters(Context context, List<PopularModel> popularModelList) {
         this.context = context;
         this.popularModelList = popularModelList;
     }
@@ -34,8 +35,8 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Glide.with(context).load(popularModelList.get(position).getImg_url()).into(holder.popImg);
-        holder.name.setText(popularModelList.get(position).getName());
+        Glide.with(context).load(popularModelList.get(position).getImage()).into(holder.popImg);
+        holder.name.setText(popularModelList.get(position).getPname());
         holder.description.setText(popularModelList.get(position).getDescription());
         holder.price.setText(popularModelList.get(position).getPrice());
     }
