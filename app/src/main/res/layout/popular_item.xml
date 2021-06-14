@@ -39,22 +39,11 @@
 
         <TextView
             android:id="@+id/pop_des"
-            android:layout_width="190dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="1"
-            android:singleLine="true"
+            android:maxLines="2"
             android:text="description"
-            />
-
-        <TextView
-            android:id="@+id/pop_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price"
-            android:textStyle="italic"
-            android:textSize="25sp"
-            android:textColor="@color/greendark"
             />
 
 

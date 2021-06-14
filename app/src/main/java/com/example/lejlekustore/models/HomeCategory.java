@@ -5,14 +5,25 @@ public class HomeCategory {
     String name;
     String image;
     String type;
+    String category;
+
 
     public HomeCategory() {
     }
 
-    public HomeCategory(String name, String image, String type) {
+    public HomeCategory(String name, String image, String type, String category) {
         this.name = name;
         this.image = image;
         this.type = type;
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {

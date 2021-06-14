@@ -1,6 +1,7 @@
 package com.example.lejlekustore.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.lejlekustore.R;
+import com.example.lejlekustore.ViewAllActivity;
 import com.example.lejlekustore.models.HomeCategory;
 import com.example.lejlekustore.models.PopularModel;
 
@@ -38,7 +40,17 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
         Glide.with(context).load(popularModelList.get(position).getImage()).into(holder.popImg);
         holder.name.setText(popularModelList.get(position).getPname());
         holder.description.setText(popularModelList.get(position).getDescription());
-        holder.price.setText(popularModelList.get(position).getPrice());
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ViewAllActivity.class);
+                intent.putExtra("category", popularModelList.get(position).getCategory());
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -55,7 +67,6 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
             popImg = itemView.findViewById(R.id.pop_img);
             description = itemView.findViewById(R.id.pop_des);
             name = itemView.findViewById(R.id.pop_name);
-            price = itemView.findViewById(R.id.pop_price);
         }
     }
 }

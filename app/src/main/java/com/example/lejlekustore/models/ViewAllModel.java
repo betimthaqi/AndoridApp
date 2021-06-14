@@ -1,30 +1,20 @@
 package com.example.lejlekustore.models;
 
-public class PopularModel {
-    String pname;
-    String description;
-    String price;
-    String image;
-    String category;
+import java.io.Serializable;
 
-    public PopularModel() {
+public class ViewAllModel implements Serializable {
 
+    String pname, description, category, image, price;
+
+    public ViewAllModel() {
     }
 
-    public PopularModel(String pname, String description, String price, String image, String category) {
+    public ViewAllModel(String pname, String description, String category, String image, String price) {
         this.pname = pname;
         this.description = description;
-        this.price = price;
+        this.category = category;
         this.image = image;
-        this.category = category;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+        this.price = price;
     }
 
     public String getPname() {
@@ -43,12 +33,12 @@ public class PopularModel {
         this.description = description;
     }
 
-    public String getPrice() {
-        return price;
+    public String getCategory() {
+        return category;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getImage() {
@@ -58,6 +48,12 @@ public class PopularModel {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 }
-
-
