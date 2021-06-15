@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.lejlekustore.R;
 import com.example.lejlekustore.models.ViewAllModel;
-import com.example.lejlekustore.ui.DetailedActivity;
+import com.example.lejlekustore.DetailedActivity;
 
 import java.util.List;
 
