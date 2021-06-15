@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:background="#D8D8D8"
             android:padding="10dp"
-            android:text="Total Price : €"
+            android:text="Total Price : 0€"
             android:textColor="@color/matteblack"
             android:textSize="28sp"
             android:textStyle="bold"

@@ -2,16 +2,25 @@ package com.example.lejlekustore.models;
 
 public class NavCategoryModel {
 
-    String name, description, discount, image;
+    String name, description, discount, image, category;
 
     public NavCategoryModel() {
     }
 
-    public NavCategoryModel(String name, String description, String discount, String image) {
+    public NavCategoryModel(String name, String description, String discount, String image, String category) {
         this.name = name;
         this.description = description;
         this.discount = discount;
         this.image = image;
+        this.category = category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {
