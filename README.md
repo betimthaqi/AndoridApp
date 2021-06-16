@@ -15,7 +15,7 @@ The app is divided into three parts. Verification sector, admin sector and user 
 
 The main part is where the user should be registered and then verified, he will get access to our page depending on whether he is an admin or a simple user.
 
-![enter image description here](https://images4.imagebam.com/de/91/6d/ME137P9_o.png)
+![enter image description here](https://i.imgur.com/jcBbEap.png)
 
 ## Admin Sector
 If you have logged in and your data proves that you are an admin, then you will have access to the admin sector. 
@@ -27,7 +27,7 @@ The most important part of this application is the user sector. If your data pro
 
 Once you have logged in you will be shown Home Activity which contains the most popular products, product categories and recommended products. On the left you also have the Navigation Drawer that shows our app's main navigation menu.
 
-![enter image description here](https://images4.imagebam.com/35/a4/a5/ME137KR_o.png)
+![enter image description here](https://i.imgur.com/oqKsNQA.png)
 
 If you click on one of the product categories you will be shown the products for those categories. You can click each product to get additional information and add it to your cart according to the quantity you want.
 
