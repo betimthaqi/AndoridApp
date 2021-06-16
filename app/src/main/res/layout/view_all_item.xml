@@ -62,6 +62,7 @@
                     android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/greendark"
                     android:text="Price: €"/>
 
                 <TextView
@@ -70,6 +71,7 @@
                     android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/greendark"
                     android:text="30"/>
 
 

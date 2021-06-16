@@ -56,17 +56,6 @@
             android:textStyle="bold"
             />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/view_all_popular"
-            android:text="View All"
-            android:gravity="end"
-            android:layout_weight="1"
-            android:layout_marginRight="7dp"
-            android:textSize="16dp"
-            android:textColor="@color/greendark"
-            />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -88,22 +77,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Explore Products"
+                android:text="Explore categorie"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/view_all_explore"
-                android:text="View All"
-                android:gravity="end"
-                android:layout_weight="1"
-                android:layout_marginRight="7dp"
-                android:textSize="16dp"
-                android:textColor="@color/greendark"
                 />
         </LinearLayout>
 
@@ -132,17 +109,6 @@
                 android:textStyle="bold"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/view_all_recommended"
-                android:text="View All"
-                android:gravity="end"
-                android:layout_weight="1"
-                android:layout_marginRight="7dp"
-                android:textSize="16dp"
-                android:textColor="@color/greendark"
-                />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

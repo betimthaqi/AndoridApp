@@ -32,14 +32,6 @@
             />
 
         <item
-            android:id="@+id/nav_newproduct"
-            android:icon="@drawable/newproduct"
-            android:title="New Products"
-            android:iconTint="@color/white"
-
-            />
-
-        <item
             android:id="@+id/nav_orders"
             android:icon="@drawable/orders"
             android:title="Orders"
@@ -47,12 +39,21 @@
 
             />
 
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/info_clipart"
+            android:title="Info"
+            android:iconTint="@color/white"
 
+            />
 
         <item
-            android:id="@+id/nav_logout"
+            android:id="@+id/nav_signout"
             android:icon="@drawable/logout"
             android:title="Logout"
-            android:iconTint="@color/white"/>
+            android:iconTint="@color/white"
+
+            />
+
     </group>
 </menu>

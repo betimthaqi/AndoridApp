@@ -76,8 +76,8 @@ public class NavCategoryActivity extends AppCompatActivity {
         }
 
         //Headphoness
-        if (category != null && category.equalsIgnoreCase("Headphoness")){
-            db.collection("Products").whereEqualTo("category","Headphoness").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        if (category != null && category.equalsIgnoreCase("Headphones")){
+            db.collection("Products").whereEqualTo("category","Headphones").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
 

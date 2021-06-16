@@ -21,9 +21,9 @@
 
     <fragment
         android:id="@+id/nav_newproduct"
-        android:name="com.example.lejlekustore.NewProductFragment"
+        android:name="com.example.lejlekustore.SignOutFragment"
         android:label="New Product"
-        tools:layout="@layout/fragment_new_product" />
+        tools:layout="@layout/fragment_signout" />
 
     <fragment
         android:id="@+id/nav_cart"
@@ -36,4 +36,17 @@
         android:name="com.example.lejlekustore.MyOrdersFragment"
         android:label="My Orders"
         tools:layout="@layout/fragment_my_orders" />
+
+    <fragment
+        android:id="@+id/nav_signout"
+        android:name="com.example.lejlekustore.SignOutFragment"
+        android:label="My Orders"
+        tools:layout="@layout/fragment_signout" />
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.example.lejlekustore.MapFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_map" />
+
 </navigation>
