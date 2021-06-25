@@ -1,10 +1,13 @@
 package com.example.lejlekustore.ui.home;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -54,6 +57,8 @@ public class HomeFragment extends Fragment {
     List<RecommendedModel> recommendedModelList;
     RecommendedAdapter recommendedAdapter;
 
+    private EditText searchBar;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -69,6 +74,9 @@ public class HomeFragment extends Fragment {
 
         progressBar.setVisibility(View.VISIBLE);
         scrollView.setVisibility(View.GONE);
+
+        //searchbar
+        searchBar = root.findViewById(R.id.search_box);
 
         //popular items
         popularRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
@@ -95,6 +103,27 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 });
+
+        //searchbar
+        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+
+
+
 
         //Home Category
         homeCatRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
@@ -145,5 +174,16 @@ public class HomeFragment extends Fragment {
         return root;
 
 
+    }
+
+    private void filter(String text) {
+
+        List<PopularModel> filterList = new ArrayList<>();
+        for (PopularModel items : popularModelList){
+            if(items.getCategory().toLowerCase().contains(text.toLowerCase())){
+                filterList.add(items);
+            }
+        }
+        popularAdapters.filterList(filterList);
     }
 }

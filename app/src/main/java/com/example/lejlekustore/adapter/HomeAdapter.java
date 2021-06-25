@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,9 +18,11 @@ import com.example.lejlekustore.R;
 import com.example.lejlekustore.ViewAllActivity;
 import com.example.lejlekustore.models.HomeCategory;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
 
     Context context;
     List<HomeCategory> categoryList;
@@ -49,12 +53,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
             }
         });
+
     }
 
     @Override
     public int getItemCount() {
         return categoryList.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

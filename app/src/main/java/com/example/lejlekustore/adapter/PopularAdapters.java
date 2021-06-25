@@ -17,6 +17,7 @@ import com.example.lejlekustore.ViewAllActivity;
 import com.example.lejlekustore.models.HomeCategory;
 import com.example.lejlekustore.models.PopularModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHolder> {
@@ -52,6 +53,12 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
             }
         });
     }
+
+    public void filterList (List<PopularModel> filterList){
+        popularModelList = filterList;
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getItemCount() {
