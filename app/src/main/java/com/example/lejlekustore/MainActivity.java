@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button MainjoinNowButton, MainloginButton;
     private ImageView imageCenter;
-    long animationDuration = 1000;
+    long animationDuration = 2500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +47,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleAnimation(View view){
-        ObjectAnimator animatorX = ObjectAnimator.ofFloat(imageCenter, "y", 600f);
-        animatorX.setDuration(animationDuration);
-
-        ObjectAnimator alphaAnimation = ObjectAnimator.ofFloat(imageCenter, View.ALPHA, 1.0f, 0.0f);
-        alphaAnimation.setDuration(animationDuration);
 
         ObjectAnimator rotateAnimation = ObjectAnimator.ofFloat(imageCenter, "rotation", 0f, 360f);
         rotateAnimation.setDuration(animationDuration);
 
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(animatorX);
+        animatorSet.playTogether(rotateAnimation);
         animatorSet.start();
     }
 

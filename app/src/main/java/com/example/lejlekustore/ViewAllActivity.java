@@ -21,6 +21,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ViewAllActivity extends AppCompatActivity {
 
@@ -48,118 +50,129 @@ public class ViewAllActivity extends AppCompatActivity {
         viewAllAdapter = new ViewAllAdapter(this, viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
 
-        //Getting Laptops
-        if (category != null && category.equalsIgnoreCase("Laptops")) {
-            firestore.collection("Products").whereEqualTo("category", "Laptops").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
 
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                        viewAllModelList.add(viewAllModel);
-                        viewAllAdapter.notifyDataSetChanged();
-                    }
+                //Getting Laptops
+                if (category != null && category.equalsIgnoreCase("Laptops")) {
+                    firestore.collection("Products").whereEqualTo("category", "Laptops").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                }
-            });
-        }
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
 
-            //Getting Cameras
-            if (category != null && category.equalsIgnoreCase("Cameras")){
-                firestore.collection("Products").whereEqualTo("category","Cameras").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                        for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
-                            ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                            viewAllModelList.add(viewAllModel);
-                            viewAllAdapter.notifyDataSetChanged();
                         }
-
-                    }
-                });
-        }
-
-        //Getting mobiles
-        if (category != null && category.equalsIgnoreCase("Mobiles")) {
-            firestore.collection("Products").whereEqualTo("category", "Mobiles").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                        viewAllModelList.add(viewAllModel);
-                        viewAllAdapter.notifyDataSetChanged();
-                    }
-
+                    });
                 }
-            });
-        }
 
-        //Getting Headphoness
-        if (category != null && category.equalsIgnoreCase("Headphoness")) {
-            firestore.collection("Products").whereEqualTo("category", "Headphoness").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                //Getting Cameras
+                if (category != null && category.equalsIgnoreCase("Cameras")){
+                    firestore.collection("Products").whereEqualTo("category","Cameras").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                        viewAllModelList.add(viewAllModel);
-                        viewAllAdapter.notifyDataSetChanged();
-                    }
+                            for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
 
+                        }
+                    });
                 }
-            });
-        }
 
-        //Getting mouses
-        if (category != null && category.equalsIgnoreCase("Mouses")) {
-            firestore.collection("Products").whereEqualTo("category", "Mouses").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                //Getting mobiles
+                if (category != null && category.equalsIgnoreCase("Mobiles")) {
+                    firestore.collection("Products").whereEqualTo("category", "Mobiles").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                        viewAllModelList.add(viewAllModel);
-                        viewAllAdapter.notifyDataSetChanged();
-                    }
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
 
+                        }
+                    });
                 }
-            });
-        }
 
-        //Getting keyboards
-        if (category != null && category.equalsIgnoreCase("Keyboards")) {
-            firestore.collection("Products").whereEqualTo("category", "Keyboards").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                //Getting Headphoness
+                if (category != null && category.equalsIgnoreCase("Headphoness")) {
+                    firestore.collection("Products").whereEqualTo("category", "Headphoness").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                        viewAllModelList.add(viewAllModel);
-                        viewAllAdapter.notifyDataSetChanged();
-                    }
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
 
+                        }
+                    });
                 }
-            });
-        }
 
+                //Getting mouses
+                if (category != null && category.equalsIgnoreCase("Mouses")) {
+                    firestore.collection("Products").whereEqualTo("category", "Mouses").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-        //Getting watches
-        if (category != null && category.equalsIgnoreCase("Watches")) {
-            firestore.collection("Products").whereEqualTo("category", "Watches").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
 
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
-                        ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
-                        viewAllModelList.add(viewAllModel);
-                        viewAllAdapter.notifyDataSetChanged();
-                    }
-
+                        }
+                    });
                 }
-            });
-        }
+
+                //Getting keyboards
+                if (category != null && category.equalsIgnoreCase("Keyboards")) {
+                    firestore.collection("Products").whereEqualTo("category", "Keyboards").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
+
+                        }
+                    });
+                }
+
+
+                //Getting watches
+                if (category != null && category.equalsIgnoreCase("Watches")) {
+                    firestore.collection("Products").whereEqualTo("category", "Watches").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                            for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()) {
+                                ViewAllModel viewAllModel = documentSnapshot.toObject(ViewAllModel.class);
+                                viewAllModelList.add(viewAllModel);
+                                viewAllAdapter.notifyDataSetChanged();
+                            }
+
+                        }
+                    });
+                }
+
+
+            }
+        });
+
+
 
     }
 

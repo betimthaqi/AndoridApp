@@ -22,6 +22,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -36,6 +38,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
 
         Button registerButton = findViewById(R.id.register_btn);
         Button backloginButton = findViewById(R.id.backlogin_btn);
@@ -63,7 +67,14 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    singUp(usernameInput.getText().toString(), passwordInput.getText().toString());
+
+                    executorService.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            singUp(usernameInput.getText().toString(), passwordInput.getText().toString());
+                        }
+                    });
+
                 }
 
             }
