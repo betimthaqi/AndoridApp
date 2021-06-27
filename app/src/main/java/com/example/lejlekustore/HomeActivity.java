@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    String category = "India";
+    String category = "";
 
 
     @Override

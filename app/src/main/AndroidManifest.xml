@@ -9,17 +9,26 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LejlekuStore">
+        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".AddAddressActivity" />
+        <activity android:name=".AddressActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBiCJVGE1fk2Qf2M5ySflAQUx2hAbzaoHo" />
 
-        <activity android:name=".PlacedOrderActivity"></activity>
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_DKSZqSpr3fzA5i" />
+
+
+        <activity android:name=".PlacedOrderActivity" />
         <activity android:name=".NavCategoryActivity" />
         <activity android:name=".DetailedActivity" />
         <activity android:name=".ViewAllActivity" />

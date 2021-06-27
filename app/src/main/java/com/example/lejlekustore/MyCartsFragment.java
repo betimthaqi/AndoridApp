@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,12 +32,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class MyCartsFragment extends Fragment {
 
     FirebaseFirestore db;
     FirebaseAuth auth;
 
+    int totalbill;
     TextView overTotalAmount;
     RecyclerView recyclerView;
     MyCartAdapter cartAdapter;
@@ -90,8 +94,9 @@ public class MyCartsFragment extends Fragment {
        buyNow.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(getContext(), PlacedOrderActivity.class);
-               intent.putExtra("itemList", (Serializable) cartModelList);
+
+               saveData();
+               Intent intent = new Intent(getContext(), AddressActivity.class);
                startActivity(intent);
            }
        });
@@ -103,9 +108,15 @@ public class MyCartsFragment extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            int totalBill = intent.getIntExtra("totalAmount", 0);
-            overTotalAmount.setText("Total Bill: " + totalBill + "€");
+            totalbill = intent.getIntExtra("totalAmount", 0);
+            overTotalAmount.setText("Total Bill: " + totalbill + "€");
 
         }
     };
+
+    public void saveData(){
+        SharedPreferences.Editor editor = getContext().getSharedPreferences("totali", MODE_PRIVATE).edit();
+        editor.putString("totalikey", String.valueOf(totalbill));
+        editor.apply();
+    }
 }
